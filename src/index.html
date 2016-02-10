@@ -21,10 +21,15 @@
 
         <!-- Add your site or application content here -->
         <p>Hello world! This is HTML5 Boilerplate.</p>
+        <p id="displayText"></p>
+        <input type="number" id="nwd" placeholder="Number of words to display" value="2">
+        <input type="number" id="wpm" placeholder="Words per minute" value="600">
+        <textarea rows="10" cols="60" name=”textPaste” id="textPaste"  onchange="textChanged()"></textarea>
 
         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+        <script src="js/model/SpeedEngine.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
