@@ -1,14 +1,14 @@
 spe = new SpeedReaderEngine();
 var SEC_PER_MIN = 60;
 var display_every_sec = 500;
-
+var pause =false;
 
 var display = function () {
 
     setTimeout(function () {
         var current = spe.getNextChunk();
         document.getElementById('displayText').textContent = current;
-        current && display();
+        !pause && current && display();
     }, display_every_sec);
 };
 var textChanged = function(){
@@ -20,6 +20,14 @@ var textChanged = function(){
     spe.setText(text);
     spe.setChunkSize(chunkSize);
     display();
+}
+var togglePauseDisplay = function () {
+    pause = !pause;
+}
+var startReading = function () {
+    document.getElementById('textPaste').classList.add('reader-display-none');
+    document.getElementById('displayText').classList.remove('reader-display-none');
+    textChanged();
 }
 var chunkChanged = function() {
     var chunkSize =  getChunkSize() || 1;

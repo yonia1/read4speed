@@ -39,8 +39,8 @@ SpeedReaderEngine = function () {
         var chunk = parseInt(chunkSize)+1;
 
         while(--chunk) { // build the word
-
-            str += textArray[++wIdx]+" ";
+            var current =textArray[++wIdx] || "";
+            str += current+" ";
 
             if(wIdx > textArray.length) break ;
 
@@ -48,6 +48,7 @@ SpeedReaderEngine = function () {
 
         return str;  // the current chunk of requested words
     }
+
     var restartReading = function () {
         wIdx = 0;
 

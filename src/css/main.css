@@ -87,8 +87,22 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.reader-box {
+    background-color: grey;
+    border-color: black;
+    border: 2px;
+    color : black;
+    height: 200px;
+    width: 50%;
+    margin-left: 25%;
 
-
+}
+.reader-display {
+    display: block;
+}
+.reader-display-none {
+    display: none;
+}
 
 
 
