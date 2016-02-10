@@ -13,7 +13,7 @@ SpeedReaderEngine = function () {
         if (!text) throw "No text was provided ";
         text = formatString(text);
         textArray = text.split(" ");// split the text by white space
-        console.log(textArray);
+
         wIdx = 0; //restart reading
 
     };
@@ -22,10 +22,11 @@ SpeedReaderEngine = function () {
         return isNaN(value) ? !1 : (x = parseFloat(value), (0 | x) === x);
     }
     var setChunk = function (size) {
-        if(!size || size <1) throw "Illegal size for chunk";
+        if(size <1) throw "Illegal size for chunk";
         if(!isInt(size)) throw "Illegal size for chunk";
 
         chunkSize = size;
+
     }
     var getNextChunk = function () {
 
@@ -34,12 +35,17 @@ SpeedReaderEngine = function () {
         if(wIdx > textArray.length) return ; // finish reading
         //return the next chunk size of words
         var str = '' ;
-        var chunk = chunkSize+1;
+
+        var chunk = parseInt(chunkSize)+1;
+
         while(--chunk) { // build the word
 
             str += textArray[++wIdx]+" ";
+
             if(wIdx > textArray.length) break ;
+
         }
+
         return str;  // the current chunk of requested words
     }
     var restartReading = function () {
