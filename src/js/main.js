@@ -1,3 +1,4 @@
+//require('bootstrap');
 spe = new SpeedReaderEngine();
 var SEC_PER_MIN = 60;
 var display_every_sec = 500;
@@ -27,6 +28,7 @@ var togglePauseDisplay = function () {
 var startReading = function () {
     document.getElementById('textPaste').classList.add('reader-display-none');
     document.getElementById('displayText').classList.remove('reader-display-none');
+    document.getElementById('displayText').focus();
     textChanged();
 }
 var chunkChanged = function() {
