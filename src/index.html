@@ -81,137 +81,30 @@
                 </div>
             </div>
         </div>
+        <div class="jumbotron jumbotron-home-page">
+            <textarea rows="6" cols="30" name=”textPaste” id="textPaste" class="textPaste center-block" placeholder="Paste yor text here!!!!"></textarea>
+
+            <p id="displayText" class="reader-display-none reader-box"></p>
+
+            <p><a id="buttonRead" class="btn btn-primary btn-lg center-block" href="#" onclick="startReading()" role="button">Start
+                reading!</a></p>
+
+            <div class="center-block">
+
+                <input type="number" id="nwd" placeholder="Number of words to display"
+                       value="2" onchange="chunkChanged()">
+                <input type="number" id="wpm" placeholder="Words per minute"
+                       value="400" onchange="calcDisplayRate()">
+
+            </div>
+        </div>
+
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="jumbotron">
-        <textarea rows="10" cols="60" name=”textPaste” id="textPaste"></textarea>
 
-        <p id="displayText" class="reader-display-none reader-box"></p>
-        <p><a class="btn btn-primary btn-lg poll-right" href="#" onclick="startReading()" role="button">Start reading!</a></p>
-    </div>
-    <div class="row">
-
-        <input type="number" id="nwd" placeholder="Number of words to display"
-               value="2" onchange="chunkChanged()">
-        <input type="number" id="wpm" placeholder="Words per minute"
-               value="400" onchange="calcDisplayRate()">
-        <button onclick="startReading()">Start reading!</button>
-
-
-    </div>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        Man must explore, and this is exploration at its greatest
-                    </h2>
-
-                    <h3 class="post-subtitle">
-                        Problems look mighty small from 150 miles up
-                    </h3>
-                </a>
-
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                    </h2>
-                </a>
-
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        Science has not yet mastered prophecy
-                    </h2>
-
-                    <h3 class="post-subtitle">
-                        We predict too much for the next year and yet far too little for the next ten.
-                    </h3>
-                </a>
-
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        Failure is not an option
-                    </h2>
-
-                    <h3 class="post-subtitle">
-                        Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                    </h3>
-                </a>
-
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-            </div>
-            <hr>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<hr>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Read4Speed 2016</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-<! real html start here -->
-
-
-<!--
 <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>-->
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
 <script src="js/plugins.js"></script>
 <script src="js/model/SpeedEngine.js"></script>
 <script src="js/main.js"></script>

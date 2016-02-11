@@ -2,7 +2,7 @@
 spe = new SpeedReaderEngine();
 var SEC_PER_MIN = 60;
 var display_every_sec = 500;
-var pause =false;
+var pause = false;
 
 var display = function () {
 
@@ -24,11 +24,22 @@ var textChanged = function(){
 }
 var togglePauseDisplay = function () {
     pause = !pause;
+    setActionButton( "Read!!!");
 }
+var setActionButton = function(str) {
+    document.getElementById('buttonRead').value = str;
+}
+
+
 var startReading = function () {
+    if(pause) {
+        pause = false;
+        //document.getElementById('textPaste').classList.add('reader-display-none');
+    }
     document.getElementById('textPaste').classList.add('reader-display-none');
     document.getElementById('displayText').classList.remove('reader-display-none');
     document.getElementById('displayText').focus();
+    setActionButton('Pause');
     textChanged();
 }
 var chunkChanged = function() {
@@ -48,6 +59,8 @@ var getWpm = function () {
 }
 var calcDisplayRate = function() {
     display_every_sec = parseFloat(SEC_PER_MIN) / parseFloat(getWpm())*1000;
+    //Now multiplay by the chunk size
+    display_every_sec *= getChunkSize()
     console.log('current display rate ' + display_every_sec);
 
 }

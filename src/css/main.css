@@ -89,13 +89,16 @@ textarea {
    ========================================================================== */
 
 .reader-box {
-
-
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
     font-size: 30px;
-
+}
+.textPaste {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    font-size: 30px;
 }
 .reader-display {
     display: block;
@@ -103,7 +106,13 @@ textarea {
 .reader-display-none {
     display: none;
 }
+.jumbotron-home-page {
+    width: 50%;
+    margin-left: 25%;
 
+    background-color: transparent;
+
+}
 
 
 
